@@ -1,0 +1,16 @@
+name: Daily lessons
+on:
+  schedule:
+    - cron: '50 4 * * *' # <- Use UTC Time +0 , change your time here ( 14 is hour , 0 is minutes ) and use 24-hour format
+
+   
+jobs:
+  Manual:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4    
+      - name: Run Automatic Farm XP Daily
+        run: node index.js
+        env:
+          DUOLINGO_JWT: ${{ secrets.DUOLINGO_JWT }}
+          LESSONS: 10
