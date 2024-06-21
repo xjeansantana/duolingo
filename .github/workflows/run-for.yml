@@ -1,5 +1,4 @@
-name: Keep my Duolingo streak
-
+name: Run for 
 on:
   schedule:
     - cron: '0 9 * * *'
