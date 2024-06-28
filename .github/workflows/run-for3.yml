@@ -1,0 +1,23 @@
+name: Run For3
+
+on:
+  schedule:
+    - cron: '0 23 * * *'
+
+jobs:
+  study:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run index.js 33 times
+        run: |
+          for i in {1..43}; do
+            node index.js
+          done
+        env:
+          DUOLINGO_JWT: ${{ secrets.DUOLINGO_JWT }}
