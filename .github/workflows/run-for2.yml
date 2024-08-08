@@ -16,7 +16,7 @@ jobs:
 
       - name: Run index.js 33 times
         run: |
-          for i in {1..148}; do
+          for i in {1..149}; do
             node index.js
           done
         env:
